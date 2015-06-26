@@ -1,0 +1,48 @@
+named map template
+
+{
+  "version": "0.0.1",
+  "name": "world_box_template_named_map",
+  "auth": {
+    "method": "token",
+    "valid_tokens": [
+      "world_box_one",
+      "whatever_tokens_you_want_4567"
+    ]
+  },
+  "placeholders": {
+    "color": {
+      "type": "css_color",
+      "default": "red"
+    }
+  },
+  "layergroup": {
+    "version": "1.0.1",
+    "layers": [
+      {
+        "type": "cartodb",
+        "options": {
+          "cartocss_version": "2.1.1",
+          "cartocss": "#layer { polygon-fill: <%= color %>; }",
+          "sql": "select * from world_box"
+        }
+      }
+    ]
+  },
+  "view": {
+    "zoom": 4,
+    "center": {
+      "lng": 0,
+      "lat": 0
+    },
+    "bounds": {
+      "west": -45,
+      "south": -45,
+      "east": 45,
+      "north": 45
+    }
+  }
+}
+
+POST to here: https://username.cartodb.com/api/v1/map/named?api_key=YOURS_HERE
+
