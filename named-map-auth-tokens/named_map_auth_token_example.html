@@ -45,9 +45,10 @@
 	    named_map: {
 	      name: "world_box_template_named_map"
 	     }
-	    }, {https: true})
+	    }, {https: true /* HTTPS is needed for named maps with auth tokens*/})
 	    .addTo(map)
 	    .done(function(layer) {
+	    	//here is where we include one of the auth tokens defined for the named map
 	    	layer.setAuthToken('world_box_one');
 	    });
 	}
